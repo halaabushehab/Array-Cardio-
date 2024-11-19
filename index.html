@@ -88,8 +88,33 @@ const oldest=inventors.sort((a,b)=>{
 console.table(oldest)
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+const category=$('.mw-category mw-category-columns')
+const links=category
 
 
+
+    // 7. Sort the people alphabetically by last name
+
+const alpha = people.sort((lastOne , nextOne)=>{
+    const [alast , afirst] = lastOne.split(',');
+    const [blast , bfirst] = nextOne.split(',')
+return alast >blast ?1:-1 ;
+
+})
+
+console.log(alpha)
+
+// 8. Sum up the instances of each of these
+const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+const transpotation=data.reduce((obj , item )=>{
+    if(!obj[item]){
+        obj[item]=0;
+    }
+    obj[item]++;
+    return obj;
+},{})
+console.log(transpotation)
 </script>
 
 
